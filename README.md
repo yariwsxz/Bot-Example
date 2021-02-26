@@ -13,6 +13,8 @@ node-fetch
 superagent (ainda não utilizamos, mas iremos)
 weather-js
 quick.db
+ytdl-core
+discord-player
 
 ✨| Observação
 troque o nome da "config.json_example" para "config.json", e altere o "seu token", para o token de seu bot, e "seu prefixo", para o prefixo do bot
