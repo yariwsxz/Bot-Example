@@ -1,10 +1,31 @@
 const Discord = require('discord.js');//Importando a livraria do discord.js
 const client = new Discord.Client();
 const config = require('./config.json');//puxando as informações da config.json
+const firebase = require('firebase');
+const db = require('quick.db');
 
 client.on("ready", () => {
     console.log("Estou Online")//sempre quando o bot ficar online ele ira mandar o "estou online" no console
 })
+
+//Agora iremos usar quick.db pela primeira e ultima vez
+
+//Abaixo Você ira colocar para o sistema de AFK, onde a utilização sera (prefixo)afk (motivo), e sempre que você for marcado, ira dizer que você esta afk, e quando você soltar alguma palavra no chat, isso será retirado!
+
+client.on('message', async message=>{
+    if(db.has(`afk-${message.author.id}+${message.guild.id}`)) {
+          const info = db.get(`afk-${message.author.id}+${message.guild.id}`)
+          await db.delete(`afk-${message.author.id}+${message.guild.id}`)
+          message.reply(`O seu status de afk foi retirado! (${info})`)
+      }
+      //checking for mentions
+      if(message.mentions.members.first()) {
+          if(db.has(`afk-${message.mentions.members.first().id}+${message.guild.id}`)) {
+              message.channel.send(message.mentions.members.first().user.tag + ":" + db.get(`afk-${message.mentions.members.first().id}+${message.guild.id}`))
+          }else return;
+      }else;
+  })
+//acima fizemos o sistema, agora falta apenas fazer o comando para ser utilizado! (a continuação sera em "afk.js")  
 
 //abaixo será a handler do bot, para fazer com que ele aceite os comandos da pasta "commands" (essa é uma handler simples, ela n aceita aliases, nem setprefix, para isso, tera que ter outra handler, que farei mais para frente)
 client.on('message', message => {
