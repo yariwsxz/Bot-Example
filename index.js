@@ -164,6 +164,17 @@ client.on("ready", async () => {
    }) 
   console.log("Estou Online!")
   ;     
+//Sistema para quando alguem editar uma mensagem
+  client.on("messageUpdate", async (oldMessage, newMessage) => {
+    require("./events/messageUpdate")(oldMessage, newMessage);
+  });
+  //Sistema para quando alguem apagar uma mensagem
+  client.on("messageDelete", async (message) => {
+    require("./events/messageDelete")(message);
+  });
+
+  //continua na pasta events
+  
   
 
 client.login(config.token)//Caso ele consiga acessar o token na config.json, e ele ira mandar no console "estou online"
