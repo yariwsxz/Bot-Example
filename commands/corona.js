@@ -28,7 +28,7 @@ let msg = await message.channel.send({
       let embed = new discord.MessageEmbed()
       .setTitle("Global Cases")
       .setColor("RANDOM")
-      .setFooter("Kindy • © Todos os direitos reservados.")
+      .setFooter("Bot-Teste")
       .setDescription("Às vezes, o número de casos pode ser diferente de uma pequena quantidade.")
       .addField("Total De Casos", corona.cases, true)
       .addField("Total De Mortes", corona.deaths, true)

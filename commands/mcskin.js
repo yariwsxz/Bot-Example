@@ -21,7 +21,7 @@ module.exports.run = (client, message, args) => {
       }
     };
   
-    if(args.length === 0) return message.channel.send(mencao + "| Comadno errado Utilize `%mcskin <Nick>`");
+    if(args.length === 0) return message.channel.send(mencao + "| Comadno errado Utilize `mcskin <Nick>`");
   
       message.channel.send(mencao, { embed });
     
