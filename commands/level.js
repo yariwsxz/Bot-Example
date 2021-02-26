@@ -9,7 +9,7 @@ exports.run = async (client, message, args, database) => {
     let xp = snap.val().xp;
     proximonvl = snap.val().level * 500;
     let embed = new Discord.MessageEmbed()
-    .setTitle('⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀:frame_photo: Level :frame_photo:')
+    .setTitle(':frame_photo: Level :frame_photo:')
     .setFooter("Bot-Teste")
     .addField(':adult: Membro :adult: ', amigo)
     .addField(':star: Nível :star: ', nivel, true)

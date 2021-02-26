@@ -28,24 +28,51 @@ client.on('message', async message=>{
 //acima fizemos o sistema, agora falta apenas fazer o comando para ser utilizado! (a continuação sera em "afk.js")  
 
 //abaixo será a handler do bot, para fazer com que ele aceite os comandos da pasta "commands" (essa é uma handler simples, ela n aceita aliases, nem setprefix, para isso, tera que ter outra handler, que farei mais para frente)
-client.on('message', message => {
-    if (message.author.bot) return;
-    if (message.channel.type == 'dm') return;
-    if (!message.content.toLowerCase().startsWith(config.prefix.toLowerCase())) return;
-    if (message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)) return;
-
-   const args = message.content
-       .trim().slice(config.prefix.length)
-       .split(/ +/g);
-   const command = args.shift().toLowerCase();
-
-   try {
-       const commandFile = require(`./commands/${command}.js`)
-       commandFile.run(client, message, args);
-   } catch (err) {
-   console.error('Erro:' + err);
- }
-});
+client.on("ready", () => {
+    console.log("Estou online!")
+  }) 
+  client.on('message', async message => {
+    if(message.channel.type == 'dm') return;
+    database.ref(`Servidores/${message.guild.id}/Prefixo`).once('value').then(async function (db) {
+      if(db.val() != null) {
+       if (message.author.bot) return;
+       if (message.channel.type == 'dm') return;
+       if (!message.content.toLowerCase().startsWith(db.val().prefixo.toLowerCase())) return;
+       if (message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)) return;
+  
+      const args = message.content
+          .trim().slice(db.val().prefixo.length)
+          .split(/ +/g);
+      const command = args.shift().toLowerCase();
+  
+      try {
+          const commandFile = require(`./commands/${command}.js`)
+          commandFile.run(client, message, args, database);
+      } catch (err) {
+      console.error('Erro:' + err);
+    }
+      }
+    if(db.val() == null) {
+           if (message.author.bot) return;
+       if (message.channel.type == 'dm') return;
+       if (!message.content.toLowerCase().startsWith(config.prefix.toLowerCase())) return;
+       if (message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)) return;
+  
+      const args = message.content
+          .trim().slice(config.prefix.length)
+          .split(/ +/g);
+      const command = args.shift().toLowerCase();
+  
+      try {
+          const commandFile = require(`./commands/${command}.js`)
+          commandFile.run(client, message, args, database);
+      } catch (err) {
+      console.error('Erro:' + err);
+    }
+    }
+    })
+    });
+  
 
 //Aqui iremos fazer a nossa introdução ao firebase, um banco de dados potente, onde pode ser feita muitas coisas, e nossa primeira coisa será sistema de levels!
 //Primeiramente, você ira entrar no site: https://firebase.google.com/?hl=pt-br, e la você irá logar na sua conta google, ira clicar em "ir para o console", no canto superior esquerdo, depois irá clicar em "adicionar projeto", ira escolher o nome, e não precisara ativar o google analitycs para o projeto, após ter criado, você ira clicar em "Adiconar APP", e ira dar um nome para ele, após ter feito isso, você ira pegar as informações que sera dada para você, e ira colocar igual colocarei a seguir: (caso não tenha ficado bem explicado, me chame no discord "Vitogiu1#0001", e explicarei melhor!)
