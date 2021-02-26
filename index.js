@@ -26,4 +26,36 @@ client.on('message', message => {
  }
 });
 
+//abaixo sera para você colocar os status do seu bot! OBSERVAÇÃO!: troque todos os testos de atividade escritos "texto(algum numero)", para as informações que você quer  que apareça!
+//obs onde esta escrito "url: "https://www.twitch.tv/SUATWITCH", troque o "SUATWITCH", para o link do seu canal da twitch, para que quando esse status apareça, ele apareça com o simbolo roxo de STREAMING!
+client.on("ready", async () => {
+    console.log("Bot iniciado");
+     console.log("Estou em " + client.guilds.cache.size + " servidores!\n" + client.user.tag + ", " + client.user.id);
+     client.user.setStatus("idle")
+     client.user.setActivity("Texto1", {type: "GAMING"})
+     
+     setInterval( async () => {
+         let random = Math.floor(Math.random() * 9);
+       
+       
+       client.user.setStatus("idle")
+       
+       if (random == 0) client.user.setActivity("Texto2", {type: "LISTENING"})
+       if (random == 1) client.user.setActivity("Texto3", {type: "STREAMING", url: "https://www.twitch.tv/SUATWITCH"})
+       if (random == 2) client.user.setActivity("Texto4", {type: "STREAMING", url: "https://www.twitch.tv/SUATWITCH"})
+       if (random == 3) client.user.setActivity(`🔍${client.guilds.cache.size}  servidores🔍 (se quiser trocar pode)`, {type: "WATCHING"})
+       if (random == 4) client.user.setActivity("Texto5", {type: "STREAMING", url: "https://www.twitch.tv/SUATWITCH"})
+       if (random == 5) client.user.setActivity("Texto6")
+        if (random == 6) client.user.setActivity("Texto7", {type: "STREAMING", url: "https://www.twitch.tv/SUATWITCH"})
+       if (random == 7) client.user.setActivity(`👩‍👩‍👦‍👦${client.users.cache.size}  Membros👩‍👩‍👦‍👦 (se quiser trocar pode)`, {type: "LISTENING"})
+       if (random == 8) client.user.setActivity("Texto8", {type: "STREAMING", url: "https://www.twitch.tv/SUATWITCH"})
+       
+       }, 1000 * 5);
+   
+     
+   }) 
+  console.log("Estou Online!")
+  ;     
+  
+
 client.login(config.token)//Caso ele consiga acessar o token na config.json, e ele ira mandar no console "estou online"
