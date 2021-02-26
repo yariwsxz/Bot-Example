@@ -3,6 +3,38 @@ const client = new Discord.Client();
 const config = require('./config.json');//puxando as informações da config.json
 const firebase = require('firebase');
 const db = require('quick.db');
+const ytdl = require('ytdl-core');
+
+//fazendo os comandos de musica
+
+const { Player } = require('discord-player');
+
+const player = new Player(client);
+client.player = player;
+client.emotes = require('./config/emojis.json');//Crie o arquivo emojis.json na pasta config e coloque oque eu colocar
+client.filters = require('./config/filters.json');//crie o arquivo filter.json na pasta config e coloque oque eu colocar
+
+fs.readdir('./events/', (err, files) => {
+    if (err) return console.error(err);
+    files.forEach(file => {
+        const event = require(`./events/${file}`);
+        let eventName = file.split(".")[0];
+        console.log(`Loading event ${eventName}`);
+        client.on(eventName, event.bind(null, client));
+    });
+});
+
+fs.readdir('./player-events/', (err, files) => {
+    if (err) return console.error(err);
+    files.forEach(file => {
+        const event = require(`./player-events/${file}`);
+        let eventName = file.split(".")[0];
+        console.log(`Carregando arquivos de play ${eventName}`);
+        client.player.on(eventName, event.bind(null, client));
+    });
+});
+//Obs: A pasta "player-events", esta todos os eventos de musica, seja das opções de entre as musicas achadas etc
+
 
 client.on("ready", () => {
     console.log("Estou Online")//sempre quando o bot ficar online ele ira mandar o "estou online" no console
