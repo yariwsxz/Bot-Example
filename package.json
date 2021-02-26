@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/vitogiu1/Bot-Example/issues"
   },
-  "homepage": "https://github.com/vitogiu1/Bot-Example#readme"
+  "homepage": "https://github.com/vitogiu1/Bot-Example#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
 }
