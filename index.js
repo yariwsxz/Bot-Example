@@ -27,7 +27,7 @@ client.on('message', async message=>{
   })
 //acima fizemos o sistema, agora falta apenas fazer o comando para ser utilizado! (a continuação sera em "afk.js")  
 
-//abaixo será a handler do bot, para fazer com que ele aceite os comandos da pasta "commands" (essa é uma handler simples, ela n aceita aliases, nem setprefix, para isso, tera que ter outra handler, que farei mais para frente)
+//abaixo será a handler do bot, para fazer com que ele aceite os comandos da pasta "commands" (Essa handler esta adaptada para firebase, logo, você podera fazer um setprefix nela, um setwelcome etc.)
 client.on("ready", () => {
     console.log("Estou online!")
   }) 
