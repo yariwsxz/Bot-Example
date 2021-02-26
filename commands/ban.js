@@ -1,3 +1,5 @@
+//O comando abaixo serve para você banir um membro de seu servidor
+
 const Discord = require('discord.js');
 
 exports.run = async (client, message, args) => {
