@@ -26,6 +26,66 @@ client.on('message', message => {
  }
 });
 
+//Aqui iremos fazer a nossa introdução ao firebase, um banco de dados potente, onde pode ser feita muitas coisas, e nossa primeira coisa será sistema de levels!
+//Primeiramente, você ira entrar no site: https://firebase.google.com/?hl=pt-br, e la você irá logar na sua conta google, ira clicar em "ir para o console", no canto superior esquerdo, depois irá clicar em "adicionar projeto", ira escolher o nome, e não precisara ativar o google analitycs para o projeto, após ter criado, você ira clicar em "Adiconar APP", e ira dar um nome para ele, após ter feito isso, você ira pegar as informações que sera dada para você, e ira colocar igual colocarei a seguir: (caso não tenha ficado bem explicado, me chame no discord "Vitogiu1#0001", e explicarei melhor!)
+var firebaseConfig = {
+    apiKey: "SUA API KEY",
+    authDomain: "DOMINIO DO SEU APP DO FIREBASE",
+    projectId: "ID DO PROJETO",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: ""
+  };
+  // Iniciando o Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  //após ter feito a configuração acima, você ira em "Realtime Database", irá criar uma realtime database, e pronto, agora você n ira mais mexer no console do firebase, só fique nessa tela, para saber se ele esta criando as coisas desejadas!
+
+  //Iniciando o sistema de levels:
+  var database = firebase.database()
+
+ client.on('message', async message => {
+      global.xp = '';
+      global.nextLevel = '';
+      let pointsAdd = Math.floor(Math.random() * 7)+ 8;
+
+      database.ref(`Servidores/Levels/${message.guild.id}/${message.author.id}`)
+      .once('value').then(async function(snap) {
+        if(message.author.bot) return;
+        if(snap.val() == null) {
+              database.ref(`Servidores/Levels/${message.guild.id}/${message.author.id}`)
+              .set({
+                xp: 0,
+                level: 1,
+                user: message.author.username,
+              });
+        } else {
+          xp = snap.val().xp + pointsAdd;
+          nextLevel = snap.val().level * 500;
+          database.ref(`Servidores/Levels/${message.guild.id}/${message.author.id}`)
+          .update({
+            xp: xp
+          })
+          if(nextLevel <= xp) {
+            nextLevel = snap.val().level + 1;
+          database.ref(`Servidores/Levels/${message.guild.id}/${message.author.id}`)
+          .update({
+            level: nextLevel,
+
+          })
+          let embed = new Discord.MessageEmbed()
+          .setTitle('Rank!')
+          .setDescription(`Parabéns ${message.author} você agora é Nível ${nextLevel}! `)
+          .setColor('RANDOM')
+          await message.channel.send(embed)
+          } 
+        }
+      })
+    });
+
+    //acima fizemos o sistema de level, onde você ganhara uma quantidade de xp a cada mensagem, e será nescessário 500 de xp para subir de nivel, e sempre a quantidade de xp para subir de nivel, vai ficar se adicionando por 500
+
+
 //abaixo sera para você colocar os status do seu bot! OBSERVAÇÃO!: troque todos os testos de atividade escritos "texto(algum numero)", para as informações que você quer  que apareça!
 //obs onde esta escrito "url: "https://www.twitch.tv/SUATWITCH", troque o "SUATWITCH", para o link do seu canal da twitch, para que quando esse status apareça, ele apareça com o simbolo roxo de STREAMING!
 client.on("ready", async () => {
