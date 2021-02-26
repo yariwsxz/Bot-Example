@@ -1,0 +1,19 @@
+{
+  "name": "bot-example",
+  "version": "1.0.0",
+  "description": "Nesse repositório irei colocar alguns comandos básicos, que acho que todo bot precisa, caso algo esteja errado, entrar em contato comigo pelo discord: Vitogiu1#0001",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitogiu1/Bot-Example.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vitogiu1/Bot-Example/issues"
+  },
+  "homepage": "https://github.com/vitogiu1/Bot-Example#readme"
+}
