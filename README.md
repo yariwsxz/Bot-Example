@@ -16,3 +16,6 @@ quick.db (sim, iremos usar quick.db, mas apenas 1 vez, e não envolvera coins, n
 
 ✨| Observação
 troque o nome da "config.json_example" para "config.json", e altere o "seu token", para o token de seu bot, e "seu prefixo", para o prefixo do bot, e depois de fazer tudo isso que foi citado acima, e agora, só dar um "node ." no console, para ele ligar
+
+🎉| Tem copy?
+Não, todos esses comandos estão abertos para publico, e não tem nenhuma restrição para serem usados
