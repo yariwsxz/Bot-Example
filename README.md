@@ -6,11 +6,11 @@ Clone esse repositório, após isso, de um "npm init", e fico apertando enter at
 
 🌹| Dependencias:
 discord.js
-firebase (ainda não utilizamos, mas iremos)
-canvas (ainda não utilizamos, mas iremos)
-node-fetch (ainda não utilizamos, mas iremos)
+firebase
+canvas
+node-fetch
 superagent (ainda não utilizamos, mas iremos)
-weather-js (ainda não utilizamos, mas iremos)
+weather-js
 quick.db (sim, iremos usar quick.db, mas apenas 1 vez, e não envolvera coins, nem level)
 (mais para frente pode ser colocadas mais, mas por em quanto é isso)
 
