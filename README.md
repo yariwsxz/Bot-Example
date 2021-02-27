@@ -3,9 +3,7 @@ Nesse repositório irei colocar alguns comandos básicos, que acho que todo bot 
 
 👀| Como usar?
 Visual Studio Code: Clone esse repositório, após isso, de um "npm init", e fico apertando enter ate ele criar os arquivos "package.json", e depois de um "npm install", para ele criar todos os arquivos, após isso, instale as dependencias que citarei abaixo! Após a instalação das depndencias, de um "node ." 
-Repl.it: Clone esse repositorio, após isso, selecione linguagem "nodejs", e em initialization, coloque "node .", após isso, instale as dependencias abaixo, e de run no projeto
-
-🌹| Dependencias:
+Repl.it: Clone esse repositorio, após isso, selecione linguagem "nodejs", e em initialization, coloque "node .", após isso, instale as dependencias abaixo, e de run no projeto (OBS: Os comandos de musica não funcionaram em repl.it, apenas no VS CODE
 discord.js
 firebase
 canvas
