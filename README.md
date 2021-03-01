@@ -10,7 +10,7 @@ discord.js
 firebase
 canvas
 node-fetch
-superagent (ainda não utilizamos, mas iremos)
+superagent
 weather-js
 quick.db
 ytdl-core
