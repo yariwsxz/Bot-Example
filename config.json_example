@@ -1,4 +1,4 @@
 {
-    "token": "Seu Token",
-    "prefix": "Seu prefix"
+    "token": "BOT_TOKEN",
+    "prefix": "BOT_PREFIX"
 }
