@@ -1,5 +1,5 @@
 ### Discord BOT
-Neste repositório, será colocado códigos liberados para uso de todos, em caso de dúvidas, contate-me no Discord.
+- Neste repositório, será colocado códigos liberados para uso de todos, em caso de dúvidas, contate-me no Discord.
 ---
 ## 🤔 | Como utilizar?
 
