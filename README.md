@@ -1,4 +1,4 @@
-### Discord BOT
+### 🚀 | Discord BOT
 - In this repository, code will be released for everyone to use, if you have any questions, contact me on Discord.
 ---
 ## 🤔 | How to use?
