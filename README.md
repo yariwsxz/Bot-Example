@@ -1,14 +1,14 @@
 ### Discord BOT
-- Neste repositório, será colocado códigos liberados para uso de todos, em caso de dúvidas, contate-me no Discord.
+- In this repository, code will be released for everyone to use, if you have any questions, contact me on Discord.
 ---
-## 🤔 | Como utilizar?
+## 🤔 | How to use?
 
-* Para começarmos, faça o download os códigos onde preferir, em uma hospedagem ou em seu PC, após instalar, sigas as instruções.
-* Troque o nome do arquivo “config.json.example” para “config.json” e preencha as informações necessárias:
-1. <b>BOT_TOKEN</b>: Essa informação é privada sua, você pode conseguir o token de seu bot no painel [Desenvolvedor do Discord](https://discord.com/developers/applications).
-2. <b>BOT_PREFIX</b>: Essa informação, pode ser pública, pois será o prefixo de seu bot.
+* To get started, download the codes wherever you prefer, on a hosting or on your PC, then follow the instructions.
+* Change the file name “config.json.example” to “config.json” and fill in the required information:
+1. <b>BOT_TOKEN</b>: This information is private to you, you can get your bot's token from the [Discord Developer Portal](https://discord.com/developers/applications).
+2. <b>BOT_PREFIX</b>: This information can be public, as it will be the prefix of your bot.
 
-## ✨ | Módulos utilizados
+## ✨ | Used modules
 - [x] [DiscordJS](https://discord.js.org/)
 - [x] [Firebase](https://firebase.google.com/)
 - [x] [Canvas](https://www.npmjs.com/package/canvas)
