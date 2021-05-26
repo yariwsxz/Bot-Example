@@ -1,23 +1,15 @@
-# Bot-Example
-Nesse repositório irei colocar alguns comandos básicos, que acho que todo bot precisa, caso algo esteja errado, entrar em contato comigo pelo discord: Vitogiu1#0001
+### Discord BOT
+Neste repositório, será colocado códigos liberados para uso de todos, em caso de dúvidas, contate-me no Discord.
+---
+## 🤔 | Como utilizar?
 
-👀| Como usar?
-Visual Studio Code: Clone esse repositório, após isso, de um "npm init", e fico apertando enter ate ele criar os arquivos "package.json", e depois de um "npm install", para ele criar todos os arquivos, após isso, instale as dependencias que citarei abaixo! Após a instalação das depndencias, de um "node ." 
-Repl.it: Clone esse repositorio, após isso, selecione linguagem "nodejs", e em initialization, coloque "node .", após isso, instale as dependencias abaixo, e de run no projeto (OBS: Os comandos de musica não funcionaram em repl.it, apenas no VS CODE
+* Para começarmos, faça o download os códigos onde preferir, em uma hospedagem ou em seu PC, após instalar, sigas as instruções.
+* Troque o nome do arquivo “config.json.example” para “config.json” e preencha as informações necessárias:
+1. <b>BOT_TOKEN</b>: Essa informação é privada sua, você pode conseguir o token de seu bot no painel [Desenvolvedor do Discord](https://discord.com/developers/applications).
+2. <b>BOT_PREFIX</b>: Essa informação, pode ser pública, pois será o prefixo de seu bot.
 
-🌎| Dependências
-discord.js
-firebase
-canvas
-node-fetch
-superagent
-weather-js
-quick.db
-ytdl-core
-discord-player
-
-✨| Observação
-troque o nome da "config.json_example" para "config.json", e altere o "seu token", para o token de seu bot, e "seu prefixo", para o prefixo do bot
-
-🎉| Tem copy?
-Não, todos esses comandos estão abertos para publico, e não tem nenhuma restrição para serem usados
+## ✨ | Módulos utilizados
+- [x] [DiscordJS](https://discord.js.org/)
+- [x] [Firebase](https://firebase.google.com/)
+- [x] [Canvas](https://www.npmjs.com/package/canvas)
+- [x] [Discord Player](https://discord-player.js.org/)
