@@ -2,6 +2,7 @@
     <img src="https://discord.c99.nl/widget/theme-4/821086275204808764.png"/>
 </p>
 ---
+
 ## 🚀 | Discord BOT
 - In this repository, code will be released for everyone to use, if you have any questions, contact me on Discord.
 
