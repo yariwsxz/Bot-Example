@@ -1,6 +1,10 @@
-### 🚀 | Discord BOT
-- In this repository, code will be released for everyone to use, if you have any questions, contact me on Discord.
+<p align="center">
+    <img src="https://discord.c99.nl/widget/theme-4/821086275204808764.png"/>
+</p>
 ---
+## 🚀 | Discord BOT
+- In this repository, code will be released for everyone to use, if you have any questions, contact me on Discord.
+
 ## 🤔 | How to use?
 
 * To get started, download the codes wherever you prefer, on a hosting or on your PC, then follow the instructions.
